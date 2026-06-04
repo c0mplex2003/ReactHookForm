@@ -48,7 +48,7 @@ describe('FormComponent', () => {
       // Assertions
       expect(nameInput).toBeInTheDocument();
       expect(nameInput).toHaveAttribute('type', 'text');
-      expect(nameInput).toHaveAttribute('placeholder', /enter your full name/i);
+      expect(nameInput).toHaveAttribute('placeholder', 'Enter your full name');
     });
 
     /**
@@ -71,7 +71,7 @@ describe('FormComponent', () => {
       
       expect(emailInput).toBeInTheDocument();
       expect(emailInput).toHaveAttribute('type', 'email');
-      expect(emailInput).toHaveAttribute('placeholder', /enter your email address/i);
+      expect(emailInput).toHaveAttribute('placeholder', 'Enter your email address');
     });
 
     /**
@@ -94,7 +94,7 @@ describe('FormComponent', () => {
       
       expect(ageInput).toBeInTheDocument();
       expect(ageInput).toHaveAttribute('type', 'number');
-      expect(ageInput).toHaveAttribute('placeholder', /enter your age/i);
+      expect(ageInput).toHaveAttribute('placeholder', 'Enter your age (18-65)');
     });
 
     /**
@@ -522,7 +522,7 @@ describe('FormComponent', () => {
       expect(nameInput).toHaveValue('First Name');
       
       // Clear field
-      await user.selectAll(nameInput);
+      await user.clear(nameInput);
       await user.type(nameInput, 'Second Name');
       expect(nameInput).toHaveValue('Second Name');
     });
